@@ -8,12 +8,10 @@ function Roadmap() {
       <div className="flex flex-col lg:flex-row lg:space-x-20 space-y-10 lg:space-y-0 ">
         <div className="text-center items-start">
           <h1 className="text-4xl border-b-2  pb-2">BEFORE LAUNCH </h1>
-          <StyledP>
-            - Building a Website for Sharks (under construction)
-          </StyledP>
+          <StyledP>- Building a Website for Sharks</StyledP>
           <StyledP>- Creating Community Channels</StyledP>
           <StyledP>- Marketing Agreements & Campaigns</StyledP>
-          <StyledP>- Giveaways</StyledP>
+          <StyledP>- Giveaways </StyledP>
           <StyledP>- Listings on Marketplaces</StyledP>
           <StyledP>- Building rarity tools and armory</StyledP>
         </div>
