@@ -1,24 +1,25 @@
-import { Snackbar } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
-
-import rocketship from "./images/1.png";
+import { Snackbar } from '@material-ui/core';
+import Alert from '@material-ui/lab/Alert';
 
 //? IMPORT COMPONENTS
+import Navbar from './components/Navbar';
+import MintContainer from './components/MintContainer';
 
 //_ REDUX
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./redux/store";
-import { setAlertState } from "./redux/slices/walletSlice";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './redux/store';
+import { setAlertState } from './redux/slices/walletSlice';
 
-import "./styles/stars.scss";
-import styled from "styled-components";
-import Nftinfo from "./components/Nftinfo";
-import Navbar from "./components/Navbar";
-import MintButton from "./components/MintButton";
+import './styles/stars.scss';
+import MiddleSection from './components/MiddleSection';
+import Roadmap from './components/Roadmap';
+import Planets from './components/Planets';
+import Footer from './components/Footer';
+import FAQ from './components/FAQ';
 
 const Home = () => {
   const alertState = useSelector(
-    (state: RootState) => state.walletReducer.alertState
+    (state: RootState) => state.walletReducer.alertState,
   );
 
   const dispatch = useDispatch();
@@ -31,12 +32,17 @@ const Home = () => {
         <div className="stars2"></div>
         <div className="shooting-stars"></div>
       </div>
-      <Navbar />
-      <StyledShip>
-        <img src={rocketship} alt="rocketship" />
-      </StyledShip>
-      <MintButton />
-      <Nftinfo />
+      <div className="hidden lg:block absolute ">
+        <Planets />
+      </div>
+
+      <div className="absolute left-0 top-0 w-full pb-40">
+        <Navbar />
+      </div>
+      <div className="pt-60">
+        <MintContainer />
+      </div>
+
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
@@ -51,24 +57,18 @@ const Home = () => {
           {alertState.message}
         </Alert>
       </Snackbar>
+      <div className="w-100 items-center justify-center pt-80 border-b-2 pb-32">
+        <MiddleSection />
+      </div>
+      <div className="px-40 mx-20 w-full py-32">
+        <Roadmap />
+      </div>
+      <div className="py-32 w-full lg:mx-20 lg:px-40" id="faq">
+        <FAQ />
+      </div>
+      <Footer />
     </div>
   );
 };
-
-const StyledShip = styled.div`
-  z-index: 1;
-  overflow: hidden;
-  animation: MoveUpDown 8s linear infinite;
-
-  @keyframes MoveUpDown {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateX(-40px);
-    }
-  }
-`;
 
 export default Home;
