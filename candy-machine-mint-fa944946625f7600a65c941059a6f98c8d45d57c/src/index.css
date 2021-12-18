@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+.mint-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  width: 350px;
+  height: 350px;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(0, 33, 54);
+  object-fit: cover;
+}
+
+.mint-container-video {
+  position: absolute;
+  z-index: 0;
+  /*not work if the screen ratio is below 16/9*/
+  width: 100%;
+  height: auto;
+}
+
+/* //_START */
