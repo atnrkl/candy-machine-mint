@@ -5,6 +5,7 @@ import marsShark from '../images/BG_sample_MARS.png';
 import eternalShark from '../images/BG_sample_ETERNAL.png';
 import galacticShark from '../images/BG_sample_GALACTIC.png';
 import earthShark from '../images/BG_sample_EARTH.png';
+import rocketship from '../images/rocketship.png';
 
 function MiddleSection() {
   return (
@@ -109,6 +110,22 @@ function MiddleSection() {
               seen. We created suns and destroyed planets. No formation
               satisfies us anymore. We travel the whole cosmos looking for
               something that will excite us.
+            </LoreText>
+          </div>
+        </div>
+      </div>
+      <div className="pt-24 lg:space-x-10 bg-transparent space-y-2 text-center py-10 lg:col-span-2 ">
+        <StyledEternals className="text-2xl lg:text-4xl">
+          ROCKET SHIPS
+        </StyledEternals>
+        <div className="flex flex-col lg:flex-row  lg:space-x-5 items-center justify-center m-0">
+          <div className="rounded-full w-36 h-36 lg:w-44 lg:h-44 z-20">
+            <img className="rounded-full" src={rocketship} alt="venus shark" />
+          </div>
+          <div className="w-72 lg:w-96 h-60 lg:h-36 text-left text-lg md:text-xl font-normal">
+            <LoreText>
+              555 total supply rocket ships designed for your favorite Solana
+              PFPs
             </LoreText>
           </div>
         </div>

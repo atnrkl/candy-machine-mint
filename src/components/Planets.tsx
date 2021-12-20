@@ -25,7 +25,7 @@ const StyledMars = styled.div`
   height: 300px;
   position: absolute;
   left: 500px;
-  top: -1400px;
+  top: -1300px;
   z-index: 1;
   overflow: hidden;
   animation: MoveUpDown 8s linear infinite;

@@ -17,6 +17,8 @@ import Planets from './components/Planets';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 
+import rocketship from './images/rocketship.png';
+
 const Home = () => {
   const alertState = useSelector(
     (state: RootState) => state.walletReducer.alertState,
@@ -39,8 +41,10 @@ const Home = () => {
       <div className="absolute left-0 top-0 w-full pb-40">
         <Navbar />
       </div>
+
       <div className="pt-60">
-        <MintContainer />
+        <img src={rocketship} alt="rocket ship" />
+        {/* <MintContainer /> */}
       </div>
 
       <Snackbar
