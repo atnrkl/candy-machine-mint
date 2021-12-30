@@ -47,8 +47,8 @@ const Home = () => {
         <img src={rocketship} alt="rocket ship" />
         {/* <MintContainer /> */}
       </div>
-      <p>MINT 0.08 SOL</p>
-      <MintButton />
+      <p>SOLD OUT</p>
+      {/* <MintButton /> */}
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
