@@ -43,10 +43,6 @@ const MintButton = () => {
     (state: RootState) => state.walletReducer.isSoldOut,
   );
 
-  const isStarted = useSelector(
-    (state: RootState) => state.walletReducer.isStarted,
-  );
-
   const config = useSelector((state: RootState) => state.walletReducer.config);
 
   const connection = useSelector(
@@ -60,9 +56,6 @@ const MintButton = () => {
   );
   const txTimeout = useSelector(
     (state: RootState) => state.walletReducer.tsxTimeout,
-  );
-  const alertState = useSelector(
-    (state: RootState) => state.walletReducer.alertState,
   );
 
   const wallet = useAnchorWallet();
@@ -112,7 +105,7 @@ const MintButton = () => {
     return (
       <WalletDialogButton
         disabled={isSoldOut || isMinting || isActive}
-        onClick={onMint}
+        onClick={() => onMint()}
         variant="contained"
       >
         <p> MINT</p>
@@ -201,12 +194,7 @@ const MintButton = () => {
     }
   };
 
-  return (
-    <div>
-      {isSoldOut ? <p>SOlD OUT</p> : ''}
-      {isMinting ? <CircularProgress /> : MintButton()}
-    </div>
-  );
+  return <div>{isMinting ? <CircularProgress /> : MintButton()}</div>;
 };
 
 export default MintButton;

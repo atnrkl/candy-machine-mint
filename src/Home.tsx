@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 
 import rocketship from './images/rocketship.png';
+import MintButton from './components/MintButton';
 
 const Home = () => {
   const alertState = useSelector(
@@ -46,7 +47,8 @@ const Home = () => {
         <img src={rocketship} alt="rocket ship" />
         {/* <MintContainer /> */}
       </div>
-
+      <p>MINT 0.08 SOL</p>
+      <MintButton />
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
